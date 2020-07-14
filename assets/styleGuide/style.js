@@ -17,8 +17,8 @@ export const searchImg = {
     height:20
 }
 export const dishesImg = {
-    width:100,
-    height:100
+    width:90,
+    height:90
 }
 export const pizzaName = {
     color:"#4F4F4F",
@@ -40,6 +40,12 @@ export const discription = {
 }
 export const starImg = {
     width:19,
-    height:18
+    height:19
+}
+export const price = {
+    color:"#4F4F4F",
+    fontSize: RFPercentage(2),
+    fontFamily: 'Biryani-Bold',
+    fontWeight:"500"
 }
 // dishes components css ends here
