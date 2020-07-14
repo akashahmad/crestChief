@@ -1,59 +1,73 @@
 import React from 'react'
 import { ScrollView, StyleSheet, Image, Text, View, Dimensions, TouchableOpacity, StatusBar } from 'react-native'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import { dishesHeading, dishesImg, searchImg, pizzaName, heartImg, discription, starImg } from '../../assets/styleGuide/style'
+import { dishesImg, pizzaName, heartImg, discription, starImg, price } from '../../assets/styleGuide/style'
 
 export default () => {
 
     const styles = StyleSheet.create({
         container: {
-            height: "100%",
-            top: "6%"
+            top: "5%",
+            bottom: "5%",
+            display:"flex",
+            alignItems:"center",
+        },
+        insideContainer:{
+            width:"95%"
         },
         mainViewOfBox: {
             backgroundColor: "#fff",
             elevation: 1,
-            marginRight: 15,
-            marginLeft: 15,
-            marginTop: 10,
             marginBottom: 10,
             borderRadius: 10,
             padding: 10,
+            width: "100%",
         },
         boxView: {
             flexDirection: "row"
+        },
+        rightPortionInsideBox: {
+            paddingLeft: 15,
+            width:"70%"
         },
         dishHeadingAndImage: {
             flexDirection: "row",
             justifyContent: "space-between",
             paddingLeft: 20,
-            paddingRight: 25
+            paddingRight: 25,
+            width:"100%"
         },
         pizzaNameAndHeartImg: {
             flexDirection: "row",
             justifyContent: "space-between",
             display: "flex",
+            width:"100%"
         },
+        starsAndPriceView: {
+            flexDirection: "row",
+            justifyContent: "space-between",
+            paddingTop: 10
+        },
+        viewOfAllStarts: {
+            flexDirection: "row",
+        },
+
     })
 
     return (
         <View style={styles.container}>
-            <View>
-                {/* heading main View */}
-                <View style={styles.dishHeadingAndImage}>
-                    <Text style={[dishesHeading]}>Popular Dishes</Text>
-                    <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
-                </View>
+            {/* <View> */}
+            <View style={styles.insideContainer}>
                 {/*  main box view of pizza image and reviews */}
                 <View style={styles.mainViewOfBox}>
                     {/* box view  */}
                     <View style={styles.boxView}>
                         {/* image */}
-                        <View>
+                        <View style={{width:"30%"}}>
                             <Image source={require("../../assets/images/pizza.png")} style={[dishesImg]} />
                         </View>
                         {/* right side text and image */}
-                        <View>
+                        <View style={styles.rightPortionInsideBox}>
                             {/* first portion */}
                             <View style={styles.pizzaNameAndHeartImg}>
                                 <View style={styles.pizzaNameView}>
@@ -68,8 +82,17 @@ export default () => {
                                 <Text style={[discription]}>Bargedar Blue, Mozarella, Pepparoni, Alfredo Sause</Text>
                             </View>
                             {/* starts images and price */}
-                            <View>
-                                <Image source={require("../../assets/images/heart.png")} style={[starImg]} />
+                            <View style={styles.starsAndPriceView}>
+                                <View style={styles.viewOfAllStarts}>
+                                    <Image source={require("../../assets/images/star.png")} style={[starImg]} />
+                                    <Image source={require("../../assets/images/star.png")} style={[starImg]} />
+                                    <Image source={require("../../assets/images/star.png")} style={[starImg]} />
+                                    <Image source={require("../../assets/images/star.png")} style={[starImg]} />
+                                    <Image source={require("../../assets/images/star.png")} style={[starImg]} />
+                                </View>
+                                <View>
+                                    <Text style={[price]}>15,90$</Text>
+                                </View>
                             </View>
                         </View>
                     </View>

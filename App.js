@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import DiscoverOffer from './screens/menu/index'
+import DiscoverOffer from './screens/menu'
 import { StatusBar } from 'react-native'
 
 export default () => {
