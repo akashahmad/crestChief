@@ -7,7 +7,7 @@ export default () => {
 
     const styles = StyleSheet.create({
         container: {
-            top: "5%",
+            top: "2%",
             bottom: "5%",
             display:"flex",
             alignItems:"center",

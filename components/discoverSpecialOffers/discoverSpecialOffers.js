@@ -18,8 +18,9 @@ export default () => {
             height: "100%",
         },
         imgSlider: {
-            height: "40%",
+            height: "45%",
             // backgroundColor: "#333333",
+            // width:"100%"
         },
         dicoverHeadingandButtonsView: {
             flex: 1,
