@@ -47,8 +47,14 @@ export const price = {
     color: "#4F4F4F",
     fontSize: RFPercentage(2),
     fontFamily: 'Biryani-Bold',
-    fontWeight: "500"
+    fontWeight: "500",
+    paddingTop:"2%",
+    paddingRight:3
 }
+export const tickGreeenImg = {
+    // marginLeft:20
+}
+
 // dishes components css ends here
 // your cart page css
 export const insidelistMainView = {

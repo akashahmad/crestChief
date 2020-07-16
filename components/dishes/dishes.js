@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScrollView, StyleSheet, Image, Text, View, Dimensions, TouchableOpacity, StatusBar } from 'react-native'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import { dishesImg, pizzaName, heartImg, discription, starImg, price } from '../../assets/styleGuide/style'
+import {tickGreeenImg ,  dishesImg, pizzaName, heartImg, discription, starImg, price } from '../../assets/styleGuide/style'
 
 export default () => {
 
@@ -51,6 +51,9 @@ export default () => {
         viewOfAllStarts: {
             flexDirection: "row",
         },
+        quantityAndPriceView:{
+            flexDirection:"row",
+        },  
         footerMainView: {
             position: "absolute",
             bottom: 0,
@@ -95,12 +98,13 @@ export default () => {
                                     <Image source={require("../../assets/images/star.png")} style={[starImg]} />
                                     <Image source={require("../../assets/images/star.png")} style={[starImg]} />
                                 </View>
-                                <View>
+                                <View style={styles.quantityAndPriceView}>
                                     <Text style={[price]}>15,90$</Text>
+                                    <Image source={require("../../assets/images/greenTick.png")}  styles={[tickGreeenImg]}/>
                                 </View>
                             </View>
                         </View>
- 
+
                     </View>
                 </View>
             </View>

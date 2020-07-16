@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import Page from './screens/discoverSpecialOffers/index'
+import Page from './screens/menu/index'
 import { StatusBar } from 'react-native'
 
 export default () => {
