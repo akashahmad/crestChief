@@ -5,6 +5,7 @@ import { View } from "react-native";
 export default (props) => {
   let { navigation } = props;
   const [loggedIn, setLoggedIn] = useState(false);
+
   useEffect(() => {
 
   }, []);

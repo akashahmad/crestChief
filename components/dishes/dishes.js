@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScrollView, StyleSheet, Image, Text, View, Dimensions, TouchableOpacity, StatusBar } from 'react-native'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import {tickGreeenImg ,  dishesImg, pizzaName, heartImg, discription, starImg, price } from '../../assets/styleGuide/style'
+import {tickGreeenImg , dishesImg, pizzaName, heartImg, discription, starImg, price } from '../../assets/styleGuide/style'
 
 export default () => {
 
