@@ -20,7 +20,7 @@ import {
 export default (props) => {
   let { navigation } = props;
   onSuccess = e => {
-    navigations.navigate('HotelPopolarDishes')
+    navigation.navigate('HotelPopolarDishes')
     // console.log(e.data)
   };
   const [torchStatus, setTorchStatus] = useState(false)
