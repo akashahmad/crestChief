@@ -5,103 +5,103 @@ import { dishesHeading, searchImg, pizzaheaderText, insideLinearGradient } from 
 import Dishes from '../dishes/dishes'
 import Footer from '../footer/footer'
 
-export default () => {
+export default (props) => {
+  let { navigation } = props;
+  const styles = StyleSheet.create({
+    container: {
+      height: "100%"
+    },
+    headerMainView: {
+      height: "12%",
+    },
+    pizzaMenuLinearGradient: {
+      height: "100%",
+      borderBottomLeftRadius: 20,
+      borderBottomRightRadius: 20,
+      paddingLeft: 20,
+      paddingRight: 20
+    },
+    insideHorizontalScroll: {
+      justifyContent: "center",
+      flexDirection: "row",
+      alignItems: "center"
+    },
+    horizontalScroll: {
+      height: "100%"
+    },
+    dishHeadingAndImage: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      paddingLeft: 20,
+      paddingRight: 25,
+      marginTop: "8%",
+      paddingBottom: "2%"
+    },
+    footerMainView: {
+      position: "absolute",
+      bottom: 0,
+      justifyContent: "flex-end",
+      width: "100%"
+    },
+  })
 
-    const styles = StyleSheet.create({
-        container: {
-            height: "100%"
-        },
-        headerMainView: {
-            height: "12%",
-        },
-        pizzaMenuLinearGradient: {
-            height: "100%",
-            borderBottomLeftRadius: 20,
-            borderBottomRightRadius: 20,
-            paddingLeft: 20,
-            paddingRight: 20
-        },
-        insideHorizontalScroll: {
-            justifyContent: "center",
-            flexDirection: "row",
-            alignItems: "center"
-        },
-        horizontalScroll: {
-            height: "100%"
-        },
-        dishHeadingAndImage: {
-            flexDirection: "row",
-            justifyContent: "space-between",
-            paddingLeft: 20,
-            paddingRight: 25,
-            marginTop: "8%",
-            paddingBottom: "2%"
-        },
-        footerMainView: {
-            position: "absolute",
-            bottom: 0,
-            justifyContent: "flex-end",
-            width: "100%"
-        },
-    })
-
-    return (
-        <View style={styles.container}>
-            {/* pizza menu scrolible header */}
-            <ScrollView>
-                <View style={styles.headerMainView}>
-                    <LinearGradient style={styles.pizzaMenuLinearGradient} colors={["#000000", "#424242"]}
-                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
-                        <ScrollView horizontal={true} style={styles.horizontalScroll}>
-                            <View style={styles.insideHorizontalScroll}>
-                                <View style={[insideLinearGradient]}>
-                                    <Text style={[pizzaheaderText]}>Waffles</Text>
-                                </View >
-                                <View style={[insideLinearGradient]}>
-                                    <Text style={[pizzaheaderText]}>Pankakes</Text>
-                                </View>
-                                <View style={[insideLinearGradient]}>
-                                    <Text style={[pizzaheaderText]}>Picked For You</Text>
-                                </View>
-                                <View style={[insideLinearGradient]}>
-                                    <Text style={[pizzaheaderText]}>Picked For You</Text>
-                                </View>
-                                <View style={[insideLinearGradient]}>
-                                    <Text style={[pizzaheaderText]}>Picked For You</Text>
-                                </View>
-                                <View style={[insideLinearGradient]}>
-                                    <Text style={[pizzaheaderText]}>Picked For You</Text>
-                                </View>
-                                <View style={[insideLinearGradient]}>
-                                    <Text style={[pizzaheaderText]}>Picked For You</Text>
-                                </View>
-                            </View>
-                        </ScrollView>
-                    </LinearGradient>
+  return (
+    <View style={styles.container}>
+      {/* pizza menu scrolible header */}
+      <ScrollView>
+        <View style={styles.headerMainView}>
+          <LinearGradient style={styles.pizzaMenuLinearGradient} colors={["#000000", "#424242"]}
+            start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
+            <ScrollView horizontal={true} style={styles.horizontalScroll}>
+              <View style={styles.insideHorizontalScroll}>
+                <View style={[insideLinearGradient]}>
+                  <Text style={[pizzaheaderText]}>Waffles</Text>
+                </View >
+                <View style={[insideLinearGradient]}>
+                  <Text style={[pizzaheaderText]}>Pankakes</Text>
                 </View>
-                <View style={{ height: "100%" }}>
-                    <View style={{ marginBottom: "56%" }}>
-                        <View style={styles.dishHeadingAndImage}>
-                            <Text style={[dishesHeading]}>Popular Dishes</Text>
-                            <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
-                        </View>
-                        <View >
-                            <View >
-                                <Dishes />
-                                <Dishes />
-                                <Dishes />
-                                <Dishes />
-                                <Dishes />
-                                <Dishes />
-                                <Dishes />
-                            </View>
-                        </View>
-                    </View>
+                <View style={[insideLinearGradient]}>
+                  <Text style={[pizzaheaderText]}>Picked For You</Text>
                 </View>
+                <View style={[insideLinearGradient]}>
+                  <Text style={[pizzaheaderText]}>Picked For You</Text>
+                </View>
+                <View style={[insideLinearGradient]}>
+                  <Text style={[pizzaheaderText]}>Picked For You</Text>
+                </View>
+                <View style={[insideLinearGradient]}>
+                  <Text style={[pizzaheaderText]}>Picked For You</Text>
+                </View>
+                <View style={[insideLinearGradient]}>
+                  <Text style={[pizzaheaderText]}>Picked For You</Text>
+                </View>
+              </View>
             </ScrollView>
-            <View style={styles.footerMainView}>
-                <Footer />
+          </LinearGradient>
+        </View>
+        <View style={{ height: "100%" }}>
+          <View style={{ marginBottom: "56%" }}>
+            <View style={styles.dishHeadingAndImage}>
+              <Text style={[dishesHeading]}>All Dishes</Text>
+              <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
             </View>
-        </View >
-    );
+            <View >
+              <View >
+                <Dishes />
+                <Dishes />
+                <Dishes />
+                <Dishes />
+                <Dishes />
+                <Dishes />
+                <Dishes />
+              </View>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+      <View style={styles.footerMainView}>
+        <Footer navigation={navigation} />
+      </View>
+    </View >
+  );
 }

@@ -7,14 +7,15 @@
  */
 
 import React from 'react';
-import Page from './screens/menu/index'
 import { StatusBar } from 'react-native'
+import AuthHandler from './authHandler'
 
 export default () => {
   return (
     <>
       <StatusBar barStyle="light-content" translucent={true} backgroundColor={'transparent'} />
-      <Page />
+      {/* Global State Provider will be added here. */}
+        <AuthHandler />
     </>
   );
 };

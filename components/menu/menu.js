@@ -9,7 +9,8 @@ import { commonButtonFooter, buttonText } from '../../assets/styleGuide/style'
 import Info from '../info/info'
 import Reviews from '../reviews/reviews'
 
-export default () => {
+export default (props) => {
+  let {navigation} = props;
 
     const styles = StyleSheet.create({
         container: {
@@ -195,7 +196,9 @@ export default () => {
                         <Dishes />
                         <Dishes />
                         <View style={styles.buttonView}>
-                            <TouchableOpacity style={[commonButtonFooter]}>
+                            <TouchableOpacity style={[commonButtonFooter]} onPress={()=>{
+                              navigation.navigate("HotelMenu")
+                            }}>
                                 <Text style={[buttonText]}>Menu</Text>
                             </TouchableOpacity>
                         </View>
@@ -212,7 +215,7 @@ export default () => {
             </ScrollView >
             {/* footer */}
             <View style={styles.footerMainView}>
-                <Footer />
+                <Footer navigation={navigation}/>
             </View>
         </View>
     );

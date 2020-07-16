@@ -2,10 +2,11 @@ import React from 'react'
 import {View} from 'react-native'
 import PizzaMenu from '../../components/pizzaMenus/pizzaMenu'
 
-export default()=>{
+export default(props)=>{
+    let {navigation} = props;
     return(
         <View>
-                <PizzaMenu />
+                <PizzaMenu navigation={navigation} />
         </View>
     );
 }
