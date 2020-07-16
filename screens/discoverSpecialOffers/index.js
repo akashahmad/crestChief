@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Text, View, CheckBox } from 'react-native'
-import Carousal from '../../components/discoverSpecialOffers/discoverSpecialOffers'
+import DiscoverMainPage from '../../components/discoverSpecialOffers/discoverSpecialOffers'
 
 export default () => {
 
@@ -8,7 +8,7 @@ export default () => {
 
     return (
         <View style={{height:"100%"}}>
-            <Carousal />
+            <DiscoverMainPage />
         </View>
     );
 }

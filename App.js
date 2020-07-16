@@ -7,14 +7,14 @@
  */
 
 import React from 'react';
-import DiscoverOffer from './screens/menu/index'
+import Page from './screens/discoverSpecialOffers/index'
 import { StatusBar } from 'react-native'
 
 export default () => {
   return (
     <>
-      <StatusBar barStyle="light-content" translucent={true} backgroundColor={'transparent'}/>
-        <DiscoverOffer />
+      <StatusBar barStyle="light-content" translucent={true} backgroundColor={'transparent'} />
+      <Page />
     </>
   );
 };

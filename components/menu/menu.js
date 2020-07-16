@@ -6,6 +6,8 @@ import Dishes from '../dishes/dishes'
 import { dishesHeading, searchImg } from '../../assets/styleGuide/style'
 import Footer from '../footer/footer'
 import { commonButtonFooter, buttonText } from '../../assets/styleGuide/style'
+import Info from '../info/info'
+import Reviews from '../reviews/reviews'
 
 export default () => {
 
@@ -22,6 +24,11 @@ export default () => {
             bottom: "22%",
             borderRadius: 90
         },
+        headingAndReviewsMainDiv: {
+            flexDirection: "row",
+            justifyContent: "space-between",
+            width: "100%"
+        },
         headingCelentano: {
             fontSize: RFPercentage(4),
             fontFamily: 'Biryani-Bold',
@@ -35,6 +42,7 @@ export default () => {
         },
         imgANndStarts: {
             flexDirection: "row",
+            paddingTop: 12
         },
         tinyStar: {
             width: 20,
@@ -109,22 +117,23 @@ export default () => {
         },
         buttonView: {
             alignItems: "center",
-            marginTop:"10%"
+            marginTop: "10%"
         },
     })
 
     return (
         <View style={styles.container}>
-            <View style={styles.backgroundImgMainView}>
-                <ImageBackground source={Resturent}
-                    style={{ height: parseInt(Dimensions.get('window').height) * 0.40, resizeMode: "cover", borderRadius: 90 }} >
-                    <View style={styles.headerAboveBackground}>
-                        <View>
-                            <View>
-                                <Text style={styles.headingCelentano}>Celentano</Text>
-                            </View>
-                            {/* main View of left side and right side Data */}
-                            <View style={styles.imgStartsAndRightSideImage}>
+            <ScrollView >
+                <View style={styles.backgroundImgMainView}>
+                    <ImageBackground source={Resturent}
+                        style={{ height: parseInt(Dimensions.get('window').height) * 0.40, resizeMode: "cover", borderRadius: 90 }} >
+                        <View style={styles.headerAboveBackground}>
+                            <View style={styles.headingAndReviewsMainDiv}>
+                                <View>
+                                    <Text style={styles.headingCelentano}>Celentano</Text>
+                                </View>
+                                {/* main View of left side and right side Data */}
+                                {/* <View style={styles.imgStartsAndRightSideImage} > */}
                                 {/* left side Data */}
                                 <View style={styles.imgANndStarts}>
                                     <View>
@@ -144,57 +153,64 @@ export default () => {
                                 {/* <View style={styles.rightSide}>
                                     <Image source={require("../../assets/images/Vector.png")} style={styles.tinyArrow} />
                                 </View> */}
+                                {/* </View> */}
+                                {/* menu box */}
                             </View>
-                            {/* menu box */}
                         </View>
-                    </View>
-                    <View style={styles.menuBoxMainView}>
-                        <View style={styles.menuBox}>
-                            {/* info */}
-                            <TouchableOpacity>
-                                <View>
-                                    <Text style={styles.commonCssText}>Info</Text>
-                                </View>
-                            </TouchableOpacity>
-                            {/* Menu */}
-                            <TouchableOpacity>
-                                <View >
-                                    <Text style={styles.menu}>Menu</Text>
-                                </View>
-                            </TouchableOpacity>
-                            {/* Reviews */}
-                            <TouchableOpacity>
-                                <View>
-                                    <Text style={styles.commonCssText}>Reviews</Text>
-                                </View>
-                            </TouchableOpacity>
+                        <View style={styles.menuBoxMainView}>
+                            <View style={styles.menuBox}>
+                                {/* info */}
+                                <TouchableOpacity>
+                                    <View>
+                                        <Text style={styles.commonCssText}>Info</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                {/* Menu */}
+                                <TouchableOpacity>
+                                    <View >
+                                        <Text style={styles.menu}>Menu</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                {/* Reviews */}
+                                <TouchableOpacity>
+                                    <View>
+                                        <Text style={styles.commonCssText}>Reviews</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
                         </View>
-                    </View>
-                </ImageBackground>
-            </View>
-            {/* component called */}
-            <View style={styles.componentCalled} >
-                <View style={styles.dishHeadingAndImage}>
-                    <Text style={[dishesHeading]}>Popular Dishes</Text>
-                    <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
+                    </ImageBackground>
                 </View>
-                <ScrollView >
-                    {/* component dishes */}
-                    <View style={{ height: "100%", marginBottom: "100%" }}>
+                {/* component called */}
+                {/* dishes component */}
+                <View style={styles.componentCalled} >
+                    <View style={styles.dishHeadingAndImage}>
+                        <Text style={[dishesHeading]}>Popular Dishes</Text>
+                        <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
+                    </View>
+                    <View style={{ height: "100%", marginBottom: "18%" }}>
                         <Dishes />
                         <Dishes />
                         <Dishes />
                         <Dishes />
                         <Dishes />
-                        {/* button */}
                         <View style={styles.buttonView}>
                             <TouchableOpacity style={[commonButtonFooter]}>
                                 <Text style={[buttonText]}>Menu</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
-                </ScrollView>
-            </View>
+                </View>
+                {/* info component */}
+                {/* <View>
+                    <Info />
+                </View> */}
+                {/* review component */}
+                {/* <View>
+                    <Reviews />
+                </View> */}
+            </ScrollView >
+            {/* footer */}
             <View style={styles.footerMainView}>
                 <Footer />
             </View>

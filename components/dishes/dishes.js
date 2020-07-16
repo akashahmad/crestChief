@@ -9,11 +9,11 @@ export default () => {
         container: {
             top: "2%",
             bottom: "5%",
-            display:"flex",
-            alignItems:"center",
+            display: "flex",
+            alignItems: "center",
         },
-        insideContainer:{
-            width:"95%"
+        insideContainer: {
+            width: "95%"
         },
         mainViewOfBox: {
             backgroundColor: "#fff",
@@ -28,20 +28,20 @@ export default () => {
         },
         rightPortionInsideBox: {
             paddingLeft: 15,
-            width:"70%"
+            width: "70%"
         },
         dishHeadingAndImage: {
             flexDirection: "row",
             justifyContent: "space-between",
             paddingLeft: 20,
             paddingRight: 25,
-            width:"100%"
+            width: "100%"
         },
         pizzaNameAndHeartImg: {
             flexDirection: "row",
             justifyContent: "space-between",
             display: "flex",
-            width:"100%"
+            width: "100%"
         },
         starsAndPriceView: {
             flexDirection: "row",
@@ -51,7 +51,12 @@ export default () => {
         viewOfAllStarts: {
             flexDirection: "row",
         },
-
+        footerMainView: {
+            position: "absolute",
+            bottom: 0,
+            justifyContent: "flex-end",
+            width: "100%"
+        }
     })
 
     return (
@@ -63,7 +68,7 @@ export default () => {
                     {/* box view  */}
                     <View style={styles.boxView}>
                         {/* image */}
-                        <View style={{width:"30%"}}>
+                        <View style={{ width: "30%" }}>
                             <Image source={require("../../assets/images/pizza.png")} style={[dishesImg]} />
                         </View>
                         {/* right side text and image */}
@@ -95,6 +100,7 @@ export default () => {
                                 </View>
                             </View>
                         </View>
+ 
                     </View>
                 </View>
             </View>

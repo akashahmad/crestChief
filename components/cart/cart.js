@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Image, Text, View, Dimensions, TouchableOpacity, StatusBar, ImageBackground } from 'react-native'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import LinearGradient from 'react-native-linear-gradient';
-import { listAndPriceView, listText, insidelistMainView, mainListContainer } from '../../assets/styleGuide/style'
+import { grandTotal, commonButtonFooter, buttonText, listAndPriceView, listText, insidelistMainView, } from '../../assets/styleGuide/style'
+import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
+import Footer from '../footer/footer'
 
 export default () => {
+
+    const radio_props = [
+        { label: 'Through Credit Card', value: 0 },
+        { label: 'Cash Payment', value: 1 }
+    ];
+
+    const [value, setValue] = useState("");
+
+    const setRadio = (value) => {
+        setValue(value);
+    }
 
     const styles = StyleSheet.create({
         container: {
@@ -27,22 +40,33 @@ export default () => {
             fontWeight: "600"
         },
         plusImg: {
-            marginTop:"9%",
+            marginTop: "9%",
         },
         orderPlusAddItemView: {
             flexDirection: "row",
             justifyContent: "space-between",
             paddingLeft: 15,
             paddingRight: 15,
-            marginTop: "5%"
+            marginTop: "5%",
+        },
+        pizzaDeleteOrAdd: {
+            borderTopWidth: 1,
+            borderColor: "#F2F2F2",
+            paddingTop: 20,
+            borderBottomWidth: 1,
+            paddingBottom: 20,
         },
         imgAndAddItemText: {
             flexDirection: "row"
         },
         orderHeading: {
             color: "#333333",
-            fontSize: RFPercentage(3),
+            fontSize: RFPercentage(2.5),
             fontWeight: "600"
+        },
+        imgQuantity: {
+            flexDirection: "row",
+            paddingTop: 4
         },
         addItem: {
             color: "#EB5757",
@@ -52,16 +76,22 @@ export default () => {
         pizzaPrice: {
             color: "#4F4F4F",
             paddingLeft: 5,
+            paddingTop: 4,
             fontSize: RFPercentage(2.5),
         },
         viewAndPizzaName: {
-            flexDirection: "row"
+            flexDirection: "row",
+            marginTop: "1%"
+        },
+        deleteImage: {
+            marginTop: "3%",
+            marginRight: 10
         },
         belowPaymethod: {
             height: "100%",
             paddingLeft: 18,
             paddingRight: 19,
-            marginBottom:"35%"
+            marginBottom: "30%"
         },
         circle: {
             width: 20,
@@ -72,8 +102,11 @@ export default () => {
             marginTop: "2%",
         },
         number: {
-            color: "#fff",
-            textAlign: "center"
+            color: "#4F4F4F",
+            textAlign: "center",
+            paddingLeft: 8,
+            paddingRight: 8,
+            fontSize: RFPercentage(2.5),
         },
         paymethodAndImage: {
             flexDirection: "row",
@@ -119,25 +152,37 @@ export default () => {
             color: "#333333",
             fontSize: RFPercentage(2.2),
             fontFamily: 'Biryani-Bold',
+            paddingRight: 4,
+            paddingTop: 2
         },
         addNewCardText: {
             color: "#4F4F4F",
             fontSize: RFPercentage(2.2),
             fontFamily: 'Biryani-Bold',
             paddingTop: 15,
+        },
+        buttonView: {
+            alignItems: "center",
+            marginTop: "5%"
+        },
+        footerMainView: {
+            position: "absolute",
+            bottom: 0,
+            justifyContent: "flex-end",
+            width: "100%"
         }
     })
 
     return (
-        <View >
-            <ScrollView style={styles.container}>
-                {/* your cart heading */}
-                <View style={styles.MainViewHeading}>
-                    <LinearGradient style={styles.backgroundLinearGradient} colors={["#000000", "#424242"]}
-                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
-                        <Text style={styles.yourCartHeading}>Your Cart</Text>
-                    </LinearGradient>
-                </View>
+        <View style={styles.container}>
+            {/* your cart heading */}
+            <View style={styles.MainViewHeading}>
+                <LinearGradient style={styles.backgroundLinearGradient} colors={["#000000", "#424242"]}
+                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
+                    <Text style={styles.yourCartHeading}>Your Cart</Text>
+                </LinearGradient>
+            </View>
+            <ScrollView >
                 {/* your order +add items*/}
                 <View style={styles.orderPlusAddItemView}>
                     <View>
@@ -149,17 +194,23 @@ export default () => {
                     </View>
                 </View>
                 {/* pizza and price */}
-                <View style={styles.orderPlusAddItemView}>
+                <View style={[styles.orderPlusAddItemView, styles.pizzaDeleteOrAdd]}>
                     <View style={styles.viewAndPizzaName}>
-                        <View style={styles.circle}><Text style={styles.number}>1</Text></View>
+                        <Image source={require("../../assets/images/delete.png")} style={styles.deleteImage} />
                         <Text style={styles.orderHeading}>Pizza Celentano</Text>
+                    </View>
+                    <View style={styles.imgQuantity}>
+                        <Image source={require("../../assets/images/plusGreen.png")} />
+                        <Text style={styles.number}>1</Text>
+                        <Image source={require("../../assets/images/minusGreen.png")} />
                     </View>
                     <View style={styles.imgAndAddItemText}>
                         <Text style={styles.pizzaPrice}>$ 13.98</Text>
                     </View>
                 </View>
+
                 {/* lists  */}
-                <View style={[mainListContainer]}>
+                <View>
                     <View style={[insidelistMainView]}>
                         <Text style={[listText]}>Add a Note (extra napkins, extra sause...)</Text>
                     </View>
@@ -179,8 +230,8 @@ export default () => {
                     </View>
                     {/* 5th */}
                     <View style={[listAndPriceView]}>
-                        <Text style={[listText]}>Total</Text>
-                        <Text style={[listText]}>$ 7.99</Text>
+                        <Text style={[grandTotal]}>Grand Total</Text>
+                        <Text style={[grandTotal]}>$ 7.99</Text>
                     </View>
                 </View>
                 {/* paymethod */}
@@ -193,23 +244,35 @@ export default () => {
                 {/* add new card */}
                 <View style={styles.belowPaymethod}>
                     <View style={styles.mainViewOfFile}>
+                        <View >
+                            <RadioForm
+                                radio_props={radio_props}
+                                initial={0}
+                                buttonColor={'#BDBDBD'}
+                                selectedButtonColor={'#F14336'}
+                                buttonInnerColor={'#F14336'}
+                                animation={true}
+                                buttonSize={10}
+                                buttonOuterSize={20}
+                                onPress={(value) => { setRadio({ value: value }) }}
+                        />
+                        </View>
                         <View style={styles.fileDotsText}>
-                            <Image source={require("../../assets/images/file.png")} />
                             <Image source={require("../../assets/images/dots.png")} style={styles.dotImage} />
                             <Text style={styles.textWithImages}>6490</Text>
-                        </View>
-                        <View >
-                            <View style={styles.insidetickView}>
-                                <Image source={require("../../assets/images/tick.png")} />
-                            </View>
+                            <Image source={require("../../assets/images/pen.png")} style={styles.penImage} />
                         </View>
                     </View>
-                    <View>
-                        <Text style={styles.addNewCardText}>Add New Card</Text>
-                        <Text style={styles.addNewCardText}>Pay at the place</Text>
+                    <View style={styles.buttonView}>
+                        <TouchableOpacity style={[commonButtonFooter]}>
+                            <Text style={[buttonText]}>Menu</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </ScrollView>
+            <View style={styles.footerMainView}>
+                <Footer />
+            </View>
         </View>
     );
 }
