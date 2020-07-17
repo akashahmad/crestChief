@@ -15,7 +15,7 @@ export const dishesHeading = {
 }
 export const searchImg = {
     width: 20,
-    height: 20
+    height: 18
 }
 export const dishesImg = {
     width: 90,
@@ -30,6 +30,7 @@ export const pizzaName = {
 export const heartImg = {
     width: 22,
     height: 20,
+    marginTop:3
 }
 export const discription = {
     color: "#828282",
@@ -48,11 +49,13 @@ export const price = {
     fontSize: RFPercentage(2),
     fontFamily: 'Biryani-Bold',
     fontWeight: "500",
-    paddingTop:"2%",
-    paddingRight:3
+    // paddingTop:"1%",
+    paddingRight:5
 }
 export const tickGreeenImg = {
-    // marginLeft:20
+    width:20,
+    height:20,
+    marginRight:3
 }
 
 // dishes components css ends here
@@ -121,6 +124,22 @@ export const buttonText = {
     textAlign: "center",
     fontFamily: 'Biryani-Bold',
 }
+// white button 
+export const whitecommonButtonFooter = {
+    backgroundColor: "#fff",
+    width: "90%",
+    padding: 15,
+    borderRadius: 10,
+    elevation: 2,
+}
+export const whitebuttonText = {
+    color: "#333333",
+    fontSize: RFPercentage(3),
+    fontWeight: "600",
+    textAlign: "center",
+    fontFamily: 'Biryani-Bold',
+}
+
 // footer css ends here
 // info page css starts from here
 export const infoImageMainView = {
@@ -133,12 +152,8 @@ export const text = {
     fontSize: RFPercentage(2.5),
     fontWeight: "600",
     paddingLeft: 12,
-    paddingTop: 4,
+    // paddingTop: 4,
     fontFamily: 'Biryani-Bold',
-}
-
-export const imageOfInfo = {
-    marginTop: 5
 }
 
 export const textTwo = {

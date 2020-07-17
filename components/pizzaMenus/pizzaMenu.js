@@ -43,6 +43,15 @@ export default (props) => {
       justifyContent: "flex-end",
       width: "100%"
     },
+    backArrowAndTExt: {
+      flexDirection: "row",
+    },
+    mrgTop: {
+      marginTop: 5,
+    },
+    textPopularPadding: {
+      paddingLeft: "4%"
+    }
   })
 
   return (
@@ -82,8 +91,15 @@ export default (props) => {
         <View style={{ height: "100%" }}>
           <View style={{ marginBottom: "56%" }}>
             <View style={styles.dishHeadingAndImage}>
-              <Text style={[dishesHeading]}>All Dishes</Text>
-              <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
+              <View style={styles.backArrowAndTExt}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                  <Image source={require("../../assets/images/backArrow.png")}  style={[searchImg, styles.mrgTop]} />
+                </TouchableOpacity>
+                <Text style={[dishesHeading, styles.textPopularPadding]}>All Dishes</Text>
+              </View>
+              <View>
+                <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
+              </View>
             </View>
             <View >
               <View >
@@ -100,7 +116,7 @@ export default (props) => {
         </View>
       </ScrollView>
       <View style={styles.footerMainView}>
-        <Footer navigation={navigation} />
+        <Footer navigation={navigation} currentScreen={"home"}/>
       </View>
     </View >
   );

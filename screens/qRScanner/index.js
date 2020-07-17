@@ -48,8 +48,6 @@ export default (props) => {
       fontSize: RFPercentage(3),
     }
 
-
-
   });
   return (
     <>

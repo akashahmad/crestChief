@@ -4,6 +4,7 @@ import QRScanner from './screens/qRScanner'
 import HotelPopolarDishes from './screens/menu'
 import Cart from './screens/cart'
 import HotelMenu from './screens/pizzaMenu'
+import Detail from './screens/detail'
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -31,6 +32,14 @@ export default () => {
       <Stack.Screen
         name="HotelMenu"
         component={HotelMenu}
+        options={{
+          header: () => <></>,
+          title: " "
+        }}
+      />
+      <Stack.Screen
+        name="MenuDetail"
+        component={Detail}
         options={{
           header: () => <></>,
           title: " "

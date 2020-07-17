@@ -15,6 +15,23 @@ export default () => {
             paddingLeft: 20,
             paddingRight: 20
         },
+        imageOfPhone:{
+            width:21,
+            height:21
+        },
+        imageOfClock:{
+            width:21,
+            height:21
+        },
+        imageOfAddress:{
+            width:17,
+            height:22
+        },
+        imageOfEmail:{
+            width:21,
+            height:20,
+            marginTop:"1%"
+        },
         mainDiscription: {
             marginTop: "8%",
             borderTopWidth: 3,
@@ -89,22 +106,22 @@ export default () => {
                     <View style={styles.reviewSection}>
                         {/* info and images */}
                         <View style={[infoImageMainView]}>
-                            <Image source={require("../../assets/images/phone.png")} style={[imageOfInfo]} />
+                            <Image source={require("../../assets/images/phone.png")} style={styles.imageOfPhone} />
                             <Text style={[text]}>(+974) 4484 8663</Text>
                         </View>
                         <View style={[infoImageMainView]}>
-                            <Image source={require("../../assets/images/clock.png")} style={[imageOfInfo]} />
+                            <Image source={require("../../assets/images/clock.png")} style={styles.imageOfClock} />
                             <View>
                                 <Text style={[text]}>Sunday - Saturday</Text>
                                 <Text style={[textTwo]}>Friday : 2:00pm - 12:00 am</Text>
                             </View>
                         </View>
                         <View style={[infoImageMainView]}>
-                            <Image source={require("../../assets/images/address.png")} style={[imageOfInfo]} />
+                            <Image source={require("../../assets/images/address.png")} style={styles.imageOfAddress} />
                             <Text style={[text]}>123 Main Street, New York</Text>
                         </View>
                         <View style={[infoImageMainView]}>
-                            <Image source={require("../../assets/images/email.png")} style={[imageOfInfo]} />
+                            <Image source={require("../../assets/images/email.png")} style={styles.imageOfEmail} />
                             <Text style={[text]}>sanmariano.com</Text>
                         </View>
                     </View>

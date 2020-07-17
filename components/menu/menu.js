@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image, ScrollView, StyleSheet, ImageBackground, Text, View, Dimensions, TouchableOpacity } from 'react-native'
 import Resturent from '../../assets/images/resturant.png'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -10,7 +10,42 @@ import Info from '../info/info'
 import Reviews from '../reviews/reviews'
 
 export default (props) => {
-  let {navigation} = props;
+    let { navigation } = props;
+    const [pageSwitch, setpageSwtich] = useState("");
+
+    const componentSwitch = () => {
+        switch (pageSwitch) {
+            case "review":
+                return <Reviews />;
+            case "info":
+                return <Info />;
+            default:
+                return <View style={styles.componentCalled} >
+                    <View style={styles.dishHeadingAndImage}>
+                        <View>
+                            <Text style={[dishesHeading]}>Popular Dishes</Text>
+                        </View>
+                        <View>
+                            <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
+                        </View>
+                    </View>
+                    <View style={{ height: "100%", marginBottom: "18%" }}>
+                        <Dishes />
+                        <Dishes />
+                        <Dishes />
+                        <Dishes />
+                        <Dishes />
+                        <View style={styles.buttonView}>
+                            <TouchableOpacity style={[commonButtonFooter]} onPress={() => {
+                                navigation.navigate("HotelMenu")
+                            }}>
+                                <Text style={[buttonText]}>Menu</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+        }
+    }
 
     const styles = StyleSheet.create({
         container: {
@@ -86,15 +121,17 @@ export default (props) => {
             flexDirection: "row",
             justifyContent: "space-around",
             borderRadius: 10,
-            padding: 20,
             elevation: 2,
             shadowColor: '#000',
+        },
+        mainViewOfLink: {
+            padding: 20,
         },
         commonCssText: {
             color: "#4F4F4F",
             fontSize: RFPercentage(2.3),
         },
-        menu: {
+        activeTextMenu: {
             color: "#EB5757",
             fontSize: RFPercentage(2.3),
         },
@@ -120,6 +157,9 @@ export default (props) => {
             alignItems: "center",
             marginTop: "10%"
         },
+        touchableMenuLinks: {
+            padding: 10
+        }
     })
 
     return (
@@ -143,39 +183,27 @@ export default (props) => {
                                     <View>
                                         <Text style={styles.starText}>4.5</Text>
                                     </View>
-                                    {/* <View>
-                                        <Text style={styles.Nearby}>Nearby</Text>
-                                    </View>
-                                    <View>
-                                        <Text style={styles.dolar}>$$ </Text>
-                                    </View> */}
                                 </View>
-                                {/* right side arrow image */}
-                                {/* <View style={styles.rightSide}>
-                                    <Image source={require("../../assets/images/Vector.png")} style={styles.tinyArrow} />
-                                </View> */}
-                                {/* </View> */}
-                                {/* menu box */}
                             </View>
                         </View>
                         <View style={styles.menuBoxMainView}>
                             <View style={styles.menuBox}>
                                 {/* info */}
-                                <TouchableOpacity>
-                                    <View>
-                                        <Text style={styles.commonCssText}>Info</Text>
+                                <TouchableOpacity onPress={() => { setpageSwtich("info") }}>
+                                    <View style={styles.mainViewOfLink}>
+                                        <Text style={pageSwitch === "info" ? styles.activeTextMenu : styles.commonCssText}>Info</Text>
                                     </View>
                                 </TouchableOpacity>
                                 {/* Menu */}
-                                <TouchableOpacity>
-                                    <View >
-                                        <Text style={styles.menu}>Menu</Text>
+                                <TouchableOpacity onPress={() => { setpageSwtich("") }}>
+                                    <View style={styles.mainViewOfLink}>
+                                        <Text style={pageSwitch === "" ? styles.activeTextMenu : styles.commonCssText}>Menu</Text>
                                     </View>
                                 </TouchableOpacity>
                                 {/* Reviews */}
-                                <TouchableOpacity>
-                                    <View>
-                                        <Text style={styles.commonCssText}>Reviews</Text>
+                                <TouchableOpacity onPress={() => { setpageSwtich("review") }}>
+                                    <View style={styles.mainViewOfLink}>
+                                        <Text style={pageSwitch === "review" ? styles.activeTextMenu : styles.commonCssText}>Reviews</Text>
                                     </View>
                                 </TouchableOpacity>
                             </View>
@@ -184,38 +212,12 @@ export default (props) => {
                 </View>
                 {/* component called */}
                 {/* dishes component */}
-                <View style={styles.componentCalled} >
-                    <View style={styles.dishHeadingAndImage}>
-                        <Text style={[dishesHeading]}>Popular Dishes</Text>
-                        <Image source={require("../../assets/images/search.png")} style={[searchImg]} />
-                    </View>
-                    <View style={{ height: "100%", marginBottom: "18%" }}>
-                        <Dishes />
-                        <Dishes />
-                        <Dishes />
-                        <Dishes />
-                        <Dishes />
-                        <View style={styles.buttonView}>
-                            <TouchableOpacity style={[commonButtonFooter]} onPress={()=>{
-                              navigation.navigate("HotelMenu")
-                            }}>
-                                <Text style={[buttonText]}>Menu</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </View>
+                {componentSwitch()}
                 {/* info component */}
-                {/* <View>
-                    <Info />
-                </View> */}
-                {/* review component */}
-                {/* <View>
-                    <Reviews />
-                </View> */}
             </ScrollView >
             {/* footer */}
-            <View style={styles.footerMainView}>
-                <Footer navigation={navigation}/>
+            <View style={styles.footerMainView} >
+                <Footer navigation={navigation} currentScreen={"home"}/>
             </View>
         </View>
     );

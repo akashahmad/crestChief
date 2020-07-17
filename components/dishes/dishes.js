@@ -100,11 +100,10 @@ export default () => {
                                 </View>
                                 <View style={styles.quantityAndPriceView}>
                                     <Text style={[price]}>15,90$</Text>
-                                    <Image source={require("../../assets/images/greenTick.png")}  styles={[tickGreeenImg]}/>
+                                    <Image source={require("../../assets/images/greenTick.png")}  style={[[tickGreeenImg]]}/>
                                 </View>
                             </View>
                         </View>
-
                     </View>
                 </View>
             </View>

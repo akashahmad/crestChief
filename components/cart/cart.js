@@ -84,8 +84,10 @@ export default (props) => {
       marginTop: "1%"
     },
     deleteImage: {
-      marginTop: "3%",
-      marginRight: 10
+      marginTop: "1%",
+      marginRight: 10,
+      width:20,
+      height:20
     },
     belowPaymethod: {
       height: "100%",
@@ -275,7 +277,7 @@ export default (props) => {
         </View>
       </ScrollView>
       <View style={styles.footerMainView}>
-        <Footer navigation={navigation}/>
+        <Footer navigation={navigation} currentScreen={"cart"}/>
       </View>
     </View>
   );

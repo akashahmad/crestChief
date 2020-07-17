@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, View, Dimensions, TouchableOpacity, Statu
 import { SliderBox } from "react-native-image-slider-box";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import LinearGradient from 'react-native-linear-gradient';
-import { Heading } from '../../assets/styleGuide/style'
+import { commonButtonFooter, buttonText, Heading , whitebuttonText , whitecommonButtonFooter} from '../../assets/styleGuide/style'
 
 export default (props) => {
   let { setLoggedIn } = props;
@@ -18,7 +18,7 @@ export default (props) => {
       height: "100%",
     },
     imgSlider: {
-      height: "45%",
+      height: "50%",
       // backgroundColor: "#333333",
       // width:"100%"
     },
@@ -35,12 +35,12 @@ export default (props) => {
       textAlign: "center",
       color: "#fff",
       width: "80%",
-      top: "25%"
+      top: "22%"
     },
     // button 1 css
     mianButtonDives: {
       width: "100%",
-      top: "40%",
+      top: "30%",
       display: "flex",
       alignItems: "center"
     },
@@ -72,6 +72,11 @@ export default (props) => {
       paddingTop: 15,
       paddingBottom: 15,
     },
+    buttonView: {
+      alignItems: "center",
+      width: "100%",
+      marginBottom:"4%"
+    },
   })
 
   return (
@@ -83,7 +88,7 @@ export default (props) => {
       <View style={styles.imgSlider}>
         <SliderBox
           images={images}
-          sliderBoxHeight={parseInt(Dimensions.get('window').height) * 0.40}
+          sliderBoxHeight={parseInt(Dimensions.get('window').height) * 0.50}
           onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
           dotColor="#F14336"
           inactiveDotColor="#fff"
@@ -98,18 +103,21 @@ export default (props) => {
         {/* first button */}
         {/* <View style={styles.buttonMainView}> */}
         <View style={styles.mianButtonDives}>
-          <View style={styles.buttonsMainDiv}>
+          <View style={styles.buttonView}>
             <TouchableOpacity onPress={() => {
               setLoggedIn(true)
-            }}>
-              <Text style={styles.tochableButtonOne}>Registration</Text>
+            }}
+              style={[commonButtonFooter]}>
+              <Text style={[buttonText]}>Registration</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.secondButtonMainView}>
+          {/* 2nd button */}
+          <View style={styles.buttonView}>
             <TouchableOpacity onPress={() => {
               setLoggedIn(true)
-            }}>
-              <Text style={styles.tochableSecondButton}>Continue as a Guest</Text>
+            }}
+              style={[whitecommonButtonFooter]}>
+              <Text style={[whitebuttonText]}>Continue as a guest</Text>
             </TouchableOpacity>
           </View>
         </View>
