@@ -271,7 +271,7 @@ export default (props) => {
                 navigation.navigate("HotelMenu")
               }}
             >
-              <Text style={[buttonText]}>Menu</Text>
+              <Text style={[buttonText]}>Place Order</Text>
             </TouchableOpacity>
           </View>
         </View>

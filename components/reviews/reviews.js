@@ -150,7 +150,7 @@ export default () => {
                         </View>
                         <View style={styles.buttonView}>
                             <TouchableOpacity style={[commonButtonFooter]}>
-                                <Text style={[buttonText]}>Menu</Text>
+                                <Text style={[buttonText]}>Leave Feedback</Text>
                             </TouchableOpacity>
                         </View>
                         {/* <View style={{marginTop:10}}>

@@ -3,7 +3,8 @@ import { Image, ScrollView, StyleSheet, ImageBackground, Text, View, Dimensions,
 import { dishPrice, dishName, boxesImages, buttonText, commonButtonFooter, rightSideResturentImg, infoImageMainView, discriptionReview, imgResturents, text, imageOfInfo, textTwo } from '../../assets/styleGuide/style'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
-export default () => {
+export default (props) => {
+    let { navigation } = props;
 
     const styles = StyleSheet.create({
         container: {
@@ -129,7 +130,7 @@ export default () => {
                     {/* discription */}
                     <View style={styles.mainDiscription}>
                         <View>
-                            <Text style={[discriptionReview]}>Discription</Text>
+                            <Text style={[discriptionReview]}>Description</Text>
                         </View>
                         <View style={styles.mainDivOfBody}>
                             <Text style={styles.discriptionBody}>San Mariano is a cafe loacted Ghatkopar
@@ -156,8 +157,10 @@ export default () => {
                             </View>
                         </View>
                         <View style={styles.buttonView}>
-                            <TouchableOpacity style={[commonButtonFooter]}>
-                                <Text style={[buttonText]}>Menu</Text>
+                            <TouchableOpacity style={[commonButtonFooter]}  onPress={() => {
+                                navigation.navigate("HotelMenu")
+                            }}>
+                                <Text style={[buttonText]}>View Menu</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

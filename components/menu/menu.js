@@ -18,7 +18,7 @@ export default (props) => {
             case "review":
                 return <Reviews />;
             case "info":
-                return <Info />;
+                return <Info navigation={navigation} />;
             default:
                 return <View style={styles.componentCalled} >
                     <View style={styles.dishHeadingAndImage}>
@@ -39,7 +39,7 @@ export default (props) => {
                             <TouchableOpacity style={[commonButtonFooter]} onPress={() => {
                                 navigation.navigate("HotelMenu")
                             }}>
-                                <Text style={[buttonText]}>Menu</Text>
+                                <Text style={[buttonText]}>View Menu</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
