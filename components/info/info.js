@@ -34,9 +34,9 @@ export default () => {
         },
         mainDiscription: {
             marginTop: "8%",
-            borderTopWidth: 3,
-            borderBottomWidth: 3,
-            borderColor: "#F2F2F2",
+            borderTopWidth: 2,
+            borderBottomWidth: 1,
+            borderColor: "#E0E0E0",
             paddingTop: "5%",
             paddingBottom: "6%",
             fontWeight: "700",
@@ -54,9 +54,9 @@ export default () => {
             lineHeight: 20
         },
         photoSection: {
-            borderTopWidth: 3,
-            borderBottomWidth: 3,
-            borderColor: "#F2F2F2",
+            borderTopWidth: 1,
+            borderBottomWidth: 2,
+            borderColor: "#E0E0E0",
             paddingTop: "5%",
             paddingBottom: "6%",
             fontWeight: "700",

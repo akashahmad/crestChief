@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Image, ScrollView, StyleSheet, ImageBackground, Text, View, Dimensions, TouchableOpacity } from 'react-native'
-import Resturent from '../../assets/images/resturant.png'
+import Resturent from '../../assets/images/rest.png'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import Dishes from '../dishes/dishes'
 import { dishesHeading, searchImg } from '../../assets/styleGuide/style'
@@ -167,7 +167,7 @@ export default (props) => {
             <ScrollView >
                 <View style={styles.backgroundImgMainView}>
                     <ImageBackground source={Resturent}
-                        style={{ height: parseInt(Dimensions.get('window').height) * 0.40, resizeMode: "cover", borderRadius: 90 }} >
+                        style={{ height: parseInt(Dimensions.get('window').height) * 0.40, resizeMode: "cover"}} >
                         <View style={styles.headerAboveBackground}>
                             <View style={styles.headingAndReviewsMainDiv}>
                                 <View>

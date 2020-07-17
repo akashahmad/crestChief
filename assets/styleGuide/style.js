@@ -62,7 +62,7 @@ export const tickGreeenImg = {
 // your cart page css
 export const insidelistMainView = {
     borderTopWidth: 1,
-    borderColor: '#F2F2F2',
+    borderColor: '#E0E0E0',
     paddingTop: 20,
     borderBottomWidth: 1,
     paddingBottom: 20,
@@ -71,7 +71,7 @@ export const insidelistMainView = {
 }
 export const listAndPriceView = {
     borderTopWidth: 1,
-    borderColor: '#F2F2F2',
+    borderColor: '#E0E0E0',
     paddingTop: 20,
     borderBottomWidth: 1,
     paddingBottom: 20,

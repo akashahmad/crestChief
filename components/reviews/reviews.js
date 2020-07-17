@@ -15,8 +15,8 @@ export default () => {
         },
         reviewerFullData: {
             padding: 20,
-            borderBottomWidth: 3,
-            borderColor: "#F2F2F2",
+            borderBottomWidth: 2,
+            borderColor: "#E0E0E0",
         },
         imgNameDateView: {
             flexDirection: "row",
@@ -37,14 +37,14 @@ export default () => {
             paddingTop: 20,
             paddingBottom: 20,
             paddingBottom: 20,
-            borderBottomWidth: 3,
-            borderColor: "#F2F2F2",
+            borderBottomWidth: 2,
+            borderColor: "#E0E0E0",
         },
 
         mainDiscription: {
             marginTop: "8%",
-            borderBottomWidth: 3,
-            borderColor: "#F2F2F2",
+            borderBottomWidth: 2,
+            borderColor: "#E0E0E0",
             paddingTop: "4%",
             paddingBottom: "6%",
             fontWeight: "700",
