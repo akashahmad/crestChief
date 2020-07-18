@@ -6,16 +6,17 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar } from 'react-native'
 import AuthHandler from './authHandler'
 
 export default () => {
+
   return (
-    <>
+    <> 
       <StatusBar barStyle="light-content" translucent={true} backgroundColor={'transparent'} />
       {/* Global State Provider will be added here. */}
-        <AuthHandler />
+      <AuthHandler />
     </>
   );
 };

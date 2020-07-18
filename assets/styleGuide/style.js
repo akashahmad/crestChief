@@ -113,12 +113,13 @@ export const insideLinearGradient = {
 export const commonButtonFooter = {
     backgroundColor: "#F14336",
     width: "90%",
-    padding: 15,
+    // padding: 15,
     borderRadius: 10,
     elevation: 2,
 }
 export const buttonText = {
     color: "#fff",
+    padding: 15,
     fontSize: RFPercentage(3),
     fontWeight: "600",
     textAlign: "center",

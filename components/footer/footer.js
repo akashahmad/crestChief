@@ -62,18 +62,12 @@ export default (props) => {
                 <Image source={currentScreen === "cart" ? require("../../assets/images/activeCart.png") : require("../../assets/images/cart.png")} style={styles.footerCartImage} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {
-              navigation.navigate("MenuDetail")
-            }}>
+            <TouchableOpacity>
               <View style={styles.footerImgView}>
                 <Image source={require("../../assets/images/document.png")} style={styles.footerDocumentImage} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity 
-            // onPress={() => {
-            //   navigation.navigate("DetailMenu")
-            // }}
-            >
+            <TouchableOpacity>
               <View style={styles.footerImgView}>
                 <Image source={require("../../assets/images/profileIcon.png")} style={styles.footerProfileImage} />
               </View>

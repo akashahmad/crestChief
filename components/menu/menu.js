@@ -30,11 +30,11 @@ export default (props) => {
                         </View>
                     </View>
                     <View style={{ height: "100%", marginBottom: "18%" }}>
-                        <Dishes />
-                        <Dishes />
-                        <Dishes />
-                        <Dishes />
-                        <Dishes />
+                        <Dishes navigation={navigation}/>
+                        <Dishes navigation={navigation}/>
+                        <Dishes navigation={navigation}/>
+                        <Dishes navigation={navigation}/>
+                        <Dishes navigation={navigation}/>
                         <View style={styles.buttonView}>
                             <TouchableOpacity style={[commonButtonFooter]} onPress={() => {
                                 navigation.navigate("HotelMenu")

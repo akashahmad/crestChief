@@ -103,13 +103,13 @@ export default (props) => {
             </View>
             <View >
               <View >
-                <Dishes />
-                <Dishes />
-                <Dishes />
-                <Dishes />
-                <Dishes />
-                <Dishes />
-                <Dishes />
+              <Dishes navigation={navigation}/>
+              <Dishes navigation={navigation}/>
+              <Dishes navigation={navigation}/>
+              <Dishes navigation={navigation}/>
+              <Dishes navigation={navigation}/>
+              <Dishes navigation={navigation}/>
+              <Dishes navigation={navigation}/>
               </View>
             </View>
           </View>

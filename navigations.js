@@ -5,14 +5,12 @@ import HotelPopolarDishes from './screens/menu'
 import Cart from './screens/cart'
 import HotelMenu from './screens/pizzaMenu'
 import Detail from './screens/detail'
-
 import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 export default () => {
   return <NavigationContainer>
     <Stack.Navigator>
-
       <Stack.Screen
         name="QRScanner"
         component={QRScanner}
