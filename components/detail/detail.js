@@ -5,7 +5,8 @@ import BackgroundPizzaImg from '../../assets/images/detailPageImage.png'
 import { commonButtonFooter, buttonText, } from '../../assets/styleGuide/style'
 import LinearGradient from 'react-native-linear-gradient';
 
-export default () => {
+export default (props) => {
+    let {navigation} = props;
 
     const styles = StyleSheet.create({
         container: {
@@ -154,10 +155,10 @@ export default () => {
             borderTopLeftRadius: 10
 
         },
-        imgAndTextOfCart:{
-            flexDirection:"row",
-            paddingTop:10
-        },  
+        imgAndTextOfCart: {
+            flexDirection: "row",
+            paddingTop: 10
+        },
         buttonView: {
             alignItems: "center",
             width: "65%",
@@ -191,7 +192,9 @@ export default () => {
                     <ImageBackground source={BackgroundPizzaImg}
                         style={{ height: parseInt(Dimensions.get('window').height) * 0.28, resizeMode: "cover", borderRadius: 90 }} >
                         <View style={styles.backImgAndTextView}>
-                            <Image source={require("../../assets/images/arrowBack2.png")} style={styles.arrowBackImg} />
+                            <TouchableOpacity onPress={() => navigation.goBack()}>
+                                <Image source={require("../../assets/images/arrowBack2.png")} style={styles.arrowBackImg} />
+                            </TouchableOpacity>
                             <Text style={styles.textStyle}>Celentano Restaurant</Text>
                         </View>
                     </ImageBackground>
