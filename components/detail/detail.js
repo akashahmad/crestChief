@@ -177,7 +177,7 @@ export default () => {
         detailButton: {
             backgroundColor: "#F14336",
             width: "100%",
-            padding: 15,
+            // padding: 10,
             borderRadius: 10,
             elevation: 2,
         }
