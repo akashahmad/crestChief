@@ -210,7 +210,6 @@ export default (props) => {
             <Text style={styles.pizzaPrice}>$ 13.98</Text>
           </View>
         </View>
-
         {/* lists  */}
         <View>
           <View style={[insidelistMainView]}>

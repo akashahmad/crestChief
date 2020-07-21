@@ -229,3 +229,10 @@ export const discriptionOfReviews = {
     paddingTop:12,
     paddingBottom:12
 }
+// payment method same header Text
+export const sameheaderDiffText = {
+    color: "#FFFFFF",
+    fontSize: RFPercentage(3),
+    fontFamily: 'Biryani-Bold', 
+    paddingLeft:"6%"
+}

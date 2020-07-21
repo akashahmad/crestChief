@@ -67,7 +67,9 @@ export default (props) => {
                 <Image source={require("../../assets/images/document.png")} style={styles.footerDocumentImage} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              navigation.navigate("Profile")
+            }}>
               <View style={styles.footerImgView}>
                 <Image source={require("../../assets/images/profileIcon.png")} style={styles.footerProfileImage} />
               </View>
