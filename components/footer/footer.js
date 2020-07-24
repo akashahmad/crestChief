@@ -68,10 +68,10 @@ export default (props) => {
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {
-              navigation.navigate("Profile")
+              navigation.navigate("SelectPaymentMethod")
             }}>
               <View style={styles.footerImgView}>
-                <Image source={require("../../assets/images/profileIcon.png")} style={styles.footerProfileImage} />
+                <Image source={currentScreen === "profile"? require("../../assets/images/activeProfileIcon.png") : require("../../assets/images/profileIcon.png")} style={styles.footerProfileImage} />
               </View>
             </TouchableOpacity>
           </View>

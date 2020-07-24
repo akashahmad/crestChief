@@ -9,8 +9,14 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'react-native'
 import AuthHandler from './authHandler'
+import SplashScreen from 'react-native-splash-screen'
+
 
 export default () => {
+
+  useEffect(()=>{
+    SplashScreen.hide();
+  })
 
   return (
     <> 

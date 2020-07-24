@@ -11,7 +11,7 @@ export default () => {
             height: "100%"
         },
         linearGradeientView: {
-            height: "30%",
+            height: "40%",
             borderBottomRightRadius: 15,
             borderBottomLeftRadius: 15,
         },
@@ -21,15 +21,15 @@ export default () => {
             borderBottomLeftRadius: 15,
         },
         profileView: {
-            height: "60%",
+            height: "40%",
             justifyContent: "center",
             alignItems: "center",
             paddingTop: 20,
             marginTop: "10%"
         },
         imgAddphoto: {
-            width: 70,
-            height: 80
+            width: 50,
+            height: 60
         },
         mainViewOFData: {
             width: "100%",
@@ -40,26 +40,7 @@ export default () => {
             width: "90%",
             borderRadius: 10,
             padding: 10,
-            marginTop: 20,
-        },
-        nameHeadingView: {
-            width: "60%"
-        },
-        nameHeading: {
-            color: "#000000",
-            fontSize: RFPercentage(2.6),
-            fontWeight: "600",
-            paddingTop: "3%"
-        },
-        NameImage: {
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            width: "100%"
-        },
-        phoneImgTExtView: {
-            flexDirection: "row",
-            justifyContent: "center",
-            paddingTop: 10
+            marginTop: 20
         },
         crossView: {
             alignItems: "flex-end",
@@ -70,28 +51,19 @@ export default () => {
             width: 13,
             height: 13,
         },
-        phoneImg: {
-            width: 15,
-            height: 15,
-            paddingTop: "6%",
-            marginRight: "2%",
+        saveTextView: {
+            textAlign: "center",
+            padding: 10,
         },
-        messageImg: {
-            width: 20,
-            height: 14,
-            marginTop: "1%",
-            marginRight: "2%",
-            marginBottom: "3%"
-        },
-        address: {
-            color: "#4F4F4F",
-            fontSize: RFPercentage(2),
+        saveText: {
+            color: "#F14336",
+            fontSize: RFPercentage(2.5),
             fontWeight: "600",
             textAlign: "center",
         },
         mainViewImgText: {
-            marginTop: "30%",
-            marginBottom: "20%"
+            marginTop: "25%",
+            marginBottom: "30%"
         },
         profileImgTExt: {
             flexDirection: "row",
@@ -144,30 +116,37 @@ export default () => {
                         {/* add data */}
                         <View style={styles.mainViewOFData}>
                             <View style={styles.addDataView}>
-                                {/* name and pen image */}
-                                <View style={styles.NameImage}>
-                                    <View style={styles.nameHeadingView}>
-                                        <Text style={styles.nameHeading}>Maxim Sirotkin</Text>
-                                    </View>
+                                <View>
                                     <TouchableOpacity style={styles.crossView}>
-                                        <Image source={require("../../assets/images/pen.png")} style={styles.crossImg} />
+                                        <Image source={require("../../assets/images/cross.png")} style={styles.crossImg} />
                                     </TouchableOpacity>
                                 </View>
-                                {/* phone and image */}
-                                <View style={styles.phoneImgTExtView}>
-                                    <Image source={require("../../assets/images/phone.png")} style={styles.phoneImg} />
-                                    <Text style={styles.address}>+1 (317) - 430- 1385</Text>
+                                {/* inputs */}
+                                <View>
+                                    <TextInput
+                                        placeholder="Full name"
+                                        style={{ height: 40, borderColor: '#E0E0E0', borderBottomWidth: 1, padding: 5, width: "100%" }}
+                                    />
+                                    <TextInput
+                                        placeholder="Phone number"
+                                        style={{ height: 50, borderColor: '#E0E0E0', borderBottomWidth: 1, padding: 5, width: "100%" }}
+                                    />
+                                    <TextInput
+                                        placeholder="E-mail"
+                                        style={{ height: 50, borderColor: '#E0E0E0', borderBottomWidth: 1, padding: 5, width: "100%" }}
+                                    />
                                 </View>
-                                {/* email */}
-                                <View style={styles.phoneImgTExtView}>
-                                    <Image source={require("../../assets/images/messagered.png")} style={styles.messageImg} />
-                                    <Text style={styles.address}>jane.kovacic@gmail.com</Text>
+                                {/* save Text */}
+                                <View>
+                                    <TouchableOpacity style={styles.saveTextView}>
+                                        <Text style={styles.saveText}>Save</Text>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
                         </View>
                     </LinearGradient>
                     {/* img and Text */}
-                    <View style={styles.mainViewImgText} >
+                    <View style={styles.mainViewImgText}>
                         {/* heart */}
                         <TouchableOpacity style={styles.profileImgTExt}>
                             <Image source={require("../../assets/images/redHeart.png")} style={styles.imgOfheartContacts} />

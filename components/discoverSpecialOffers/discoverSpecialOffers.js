@@ -4,6 +4,7 @@ import { SliderBox } from "react-native-image-slider-box";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import LinearGradient from 'react-native-linear-gradient';
 import { commonButtonFooter, buttonText, Heading , whitebuttonText , whitecommonButtonFooter} from '../../assets/styleGuide/style'
+import {whiteColor} from '../../assets/styleGuide/colors'
 
 export default (props) => {
   let { setLoggedIn } = props;
@@ -116,7 +117,7 @@ export default (props) => {
             <TouchableOpacity onPress={() => {
               setLoggedIn(true)
             }}
-              style={[whitecommonButtonFooter]}>
+              style={[whitecommonButtonFooter , whiteColor]}>
               <Text style={[whitebuttonText]}>Continue as a guest</Text>
             </TouchableOpacity>
           </View>

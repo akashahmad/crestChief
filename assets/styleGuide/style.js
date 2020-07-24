@@ -127,7 +127,7 @@ export const buttonText = {
 }
 // white button 
 export const whitecommonButtonFooter = {
-    backgroundColor: "#fff",
+    // backgroundColor: "#fff",
     width: "90%",
     padding: 15,
     borderRadius: 10,
@@ -140,6 +140,8 @@ export const whitebuttonText = {
     textAlign: "center",
     fontFamily: 'Biryani-Bold',
 }
+
+
 
 // footer css ends here
 // info page css starts from here
