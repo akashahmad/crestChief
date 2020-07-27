@@ -19,6 +19,14 @@ export default () => {
 
     <Stack.Navigator>
     <Stack.Screen
+        name="HotelPopolarDishes"
+        component={HotelPopolarDishes}
+        options={{
+          header: () => <></>,
+          title: " "
+        }}
+      />
+    <Stack.Screen
         name="Profile"
         component={Profile}
         options={{
@@ -34,14 +42,7 @@ export default () => {
           title: " "
         }}
       />
-      <Stack.Screen
-        name="HotelPopolarDishes"
-        component={HotelPopolarDishes}
-        options={{
-          header: () => <></>,
-          title: " "
-        }}
-      />
+      
       <Stack.Screen
         name="QRScanner"
         component={QRScanner}

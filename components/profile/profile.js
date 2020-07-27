@@ -186,7 +186,9 @@ export default (props) => {
                             <Text style={styles.textofImage}>Reservation</Text>
                         </TouchableOpacity>
                         {/* payment */}
-                        <TouchableOpacity style={styles.profileSecondBorderImgTExt}>
+                        <TouchableOpacity style={styles.profileSecondBorderImgTExt} onPress={() => {
+                            navigation.navigate("PaymentOptions")
+                        }}>
                             <Image source={require("../../assets/images/money.png")} style={styles.imgOfContacts} />
                             <Text style={styles.textofImage}>Payment</Text>
                         </TouchableOpacity>

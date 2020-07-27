@@ -86,8 +86,8 @@ export default (props) => {
     deleteImage: {
       marginTop: "1%",
       marginRight: 10,
-      width:20,
-      height:20
+      width: 20,
+      height: 20
     },
     belowPaymethod: {
       height: "100%",
@@ -259,14 +259,18 @@ export default (props) => {
               />
             </View>
             <View style={styles.fileDotsText}>
-              <Image source={require("../../assets/images/dots.png")} style={styles.dotImage} />
-              <Text style={styles.textWithImages}>6490</Text>
-              <Image source={require("../../assets/images/pen.png")} style={styles.penImage} />
+              <TouchableOpacity onPress={() => {
+                navigation.navigate("PaymentOptions")
+              }}>
+                <Image source={require("../../assets/images/dots.png")} style={styles.dotImage} />
+                <Text style={styles.textWithImages}>6490</Text>
+                <Image source={require("../../assets/images/pen.png")} style={styles.penImage} />
+              </TouchableOpacity>
             </View>
           </View>
           <View style={styles.buttonView}>
             <TouchableOpacity style={[commonButtonFooter]}
-              onPress={()=>{
+              onPress={() => {
                 navigation.navigate("HotelMenu")
               }}
             >
@@ -276,7 +280,7 @@ export default (props) => {
         </View>
       </ScrollView>
       <View style={styles.footerMainView}>
-        <Footer navigation={navigation} currentScreen={"cart"}/>
+        <Footer navigation={navigation} currentScreen={"cart"} />
       </View>
     </View>
   );
