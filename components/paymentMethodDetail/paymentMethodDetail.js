@@ -4,9 +4,10 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import LinearGradient from 'react-native-linear-gradient';
 import { whitebuttonText, whitecommonButtonFooter, sameheaderDiffText, buttonText, commonButtonFooter } from '../../assets/styleGuide/style'
 import Footer from '../footer/footer'
-import {blackColor , textColorwhite} from '../../assets/styleGuide/colors'
+import { blackColor, textColorwhite } from '../../assets/styleGuide/colors'
 
-export default () => {
+export default (props) => {
+    const { navigation } = props
 
     const styles = StyleSheet.create({
         container: {
@@ -61,14 +62,14 @@ export default () => {
             width: "45%",
         },
         mainButtonView: {
-            marginTop:"20%",
+            marginTop: "20%",
             marginBottom: "20%",
-            justifyContent:"flex-end"
+            justifyContent: "flex-end"
         },
         buttonView: {
             alignItems: "center",
             width: "100%",
-            marginBottom:"4%"
+            marginBottom: "4%"
         },
     })
 
@@ -80,7 +81,11 @@ export default () => {
                     <LinearGradient style={styles.backgrGradient} colors={["#000000", "#424242"]}
                         start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
                         <View style={styles.headerImgText}>
-                            <Image source={require("../../assets/images/arrowBack2.png")} style={styles.backImg} />
+                            <TouchableOpacity onPress={() => {
+                                navigation.navigate("PaymentOptions")
+                            }}>
+                                <Image source={require("../../assets/images/arrowBack2.png")} style={styles.backImg} />
+                            </TouchableOpacity>
                             <Text style={[sameheaderDiffText]}>Payment Method</Text>
                         </View>
                     </LinearGradient>
@@ -117,7 +122,9 @@ export default () => {
                     {/* buttons */}
                     <View style={styles.mainButtonView}>
                         <View style={styles.buttonView}>
-                            <TouchableOpacity
+                            <TouchableOpacity onPress={() => {
+                                navigation.navigate("PaymentOptions")
+                            }}
                                 style={[commonButtonFooter]}>
                                 <Text style={[buttonText]}>Update</Text>
                             </TouchableOpacity>
@@ -125,15 +132,19 @@ export default () => {
                         {/* 2nd button */}
                         <View style={styles.buttonView}>
                             <TouchableOpacity
-                                style={[whitecommonButtonFooter , blackColor]}>
-                                <Text style={[whitebuttonText , textColorwhite]}>Delete</Text>
+                                style={[whitecommonButtonFooter, blackColor]}
+                                onPress={() => {
+                                    navigation.navigate("PaymentOptions")
+                                }}
+                            >
+                                <Text style={[whitebuttonText, textColorwhite]}>Delete</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
             </ScrollView>
             <View style={{ justifyContent: "flex-end" }}>
-                <Footer />
+                <Footer navigation={navigation} />
             </View>
         </View>
     );

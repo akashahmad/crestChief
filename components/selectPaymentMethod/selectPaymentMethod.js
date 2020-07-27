@@ -5,8 +5,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import { sameheaderDiffText } from '../../assets/styleGuide/style'
 import Footer from '../footer/footer'
 
-export default () => {
+export default (props) => {
 
+    let { navigation} = props;
     const styles = StyleSheet.create({
         container: {
             height: "100%"
@@ -76,7 +77,11 @@ export default () => {
                     <LinearGradient style={styles.backgrGradient} colors={["#000000", "#424242"]}
                         start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
                         <View style={styles.headerImgText}>
+                            <TouchableOpacity onPress={() => {
+                            navigation.navigate("PaymentOptions")
+                        }}>
                             <Image source={require("../../assets/images/arrowBack2.png")} style={styles.backImg} />
+                            </TouchableOpacity>
                             <Text style={[sameheaderDiffText]}>Select Payment Method</Text>
                         </View>
                     </LinearGradient>
@@ -85,7 +90,9 @@ export default () => {
                 <View style={styles.paymentMainView}>
                     <View>
                         {/* credit card option */}
-                        <TouchableOpacity style={styles.paymentClickView}>
+                        <TouchableOpacity style={styles.paymentClickView} onPress={() => {
+                            navigation.navigate("AddNewPayment")
+                        }}>
                             <View style={styles.imgTextPayment}>
                                 <Image source={require("../../assets/images/creditCard.png")} style={styles.paymentImgs} />
                                 <Text style={styles.paymentText}>Credit or Debit Card</Text>
@@ -95,7 +102,9 @@ export default () => {
                             </View>
                         </TouchableOpacity>
                         {/* paypal */}
-                        <TouchableOpacity style={styles.paymentClickViewBorder}>
+                        <TouchableOpacity style={styles.paymentClickViewBorder} onPress={() => {
+                            navigation.navigate("AddNewPayment")
+                        }}>
                             <View style={styles.imgTextPayment}>
                                 <Image source={require("../../assets/images/paypal.png")} style={styles.paymentImgs} />
                                 <Text style={styles.paymentText}>PayPal</Text>
@@ -105,7 +114,9 @@ export default () => {
                             </View>
                         </TouchableOpacity>
                         {/* gift card */}
-                        <TouchableOpacity style={styles.paymentClickViewBorder}>
+                        <TouchableOpacity style={styles.paymentClickViewBorder} onPress={() => {
+                            navigation.navigate("AddNewPayment")
+                        }}>
                             <View style={styles.imgTextPayment}>
                                 <Image source={require("../../assets/images/giftcard.png")} style={styles.paymentImgs} />
                                 <Text style={styles.paymentText}>Gift Card</Text>
@@ -117,7 +128,7 @@ export default () => {
                     </View>
                 </View>
                 <View style={styles.footerView}>
-                    <Footer currentScreen={"profile"}/>
+                    <Footer currentScreen={"profile"} navigation={navigation}/>
                 </View>
             </View>
         </View>

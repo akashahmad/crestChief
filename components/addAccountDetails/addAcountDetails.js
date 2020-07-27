@@ -4,8 +4,8 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import LinearGradient from 'react-native-linear-gradient';
 import Footer from '../footer/footer'
 
-export default () => {
-
+export default (props) => {
+    let { navigation } = props;
     const styles = StyleSheet.create({
         container: {
             height: "100%"
@@ -117,7 +117,9 @@ export default () => {
                         <View style={styles.mainViewOFData}>
                             <View style={styles.addDataView}>
                                 <View>
-                                    <TouchableOpacity style={styles.crossView}>
+                                    <TouchableOpacity style={styles.crossView} onPress={() => {
+                                        navigation.navigate("Profile")
+                                    }}>
                                         <Image source={require("../../assets/images/cross.png")} style={styles.crossImg} />
                                     </TouchableOpacity>
                                 </View>
@@ -163,7 +165,9 @@ export default () => {
                             <Text style={styles.textofImage}>Reservation</Text>
                         </TouchableOpacity>
                         {/* payment */}
-                        <TouchableOpacity style={styles.profileSecondBorderImgTExt}>
+                        <TouchableOpacity style={styles.profileSecondBorderImgTExt} onPress={() => {
+                                        navigation.navigate("AccountDetails")
+                                    }}>
                             <Image source={require("../../assets/images/money.png")} style={styles.imgOfContacts} />
                             <Text style={styles.textofImage}>Payment</Text>
                         </TouchableOpacity>
@@ -186,7 +190,7 @@ export default () => {
                 </View>
             </ScrollView>
             <View style={styles.footerView}>
-                <Footer />
+                <Footer navigation={navigation} />
             </View>
         </View>
     );

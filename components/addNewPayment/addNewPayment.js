@@ -5,7 +5,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import {  sameheaderDiffText, buttonText, commonButtonFooter } from '../../assets/styleGuide/style'
 import Footer from '../footer/footer'
 
-export default () => {
+export default (props) => {
+    const {navigation}=props
 
     const styles = StyleSheet.create({
         container: {
@@ -82,8 +83,11 @@ export default () => {
                     <LinearGradient style={styles.backgrGradient} colors={["#000000", "#424242"]}
                         start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
                         <View style={styles.headerImgText}>
+                            <TouchableOpacity onPress={() => {
+                            navigation.navigate("SelectPaymentMethod")
+                        }}>
                             <Image source={require("../../assets/images/arrowBack2.png")} style={styles.backImg} />
-                            <Text style={[sameheaderDiffText]}>Add Newn Payment Method</Text>
+                            <Text style={[sameheaderDiffText]}>Add Newn Payment Method</Text></TouchableOpacity>
                         </View>
                     </LinearGradient>
                 </View>
@@ -120,7 +124,11 @@ export default () => {
                     <View style={styles.mainButtonView}>
                         <View style={styles.buttonView}>
                             <TouchableOpacity
-                                style={[commonButtonFooter]}>
+                                style={[commonButtonFooter]}
+                                onPress={() => {
+                                    navigation.navigate("PaymentOptions")
+                                }}>
+
                                 <Text style={[buttonText]}>Add</Text>
                             </TouchableOpacity>
                         </View>
@@ -128,7 +136,7 @@ export default () => {
                 </View>
             </ScrollView>
             <View style={styles.footerView}>
-                <Footer />
+                <Footer navigation={navigation}/>
             </View>
         </View>
     );

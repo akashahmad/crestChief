@@ -5,8 +5,8 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { buttonText, commonButtonFooter } from '../../assets/styleGuide/style'
 import Footer from '../footer/footer'
 
-export default () => {
-
+export default (props) => {
+const {navigation}=props
     const styles = StyleSheet.create({
         container: {
             height: "100%"
@@ -123,9 +123,13 @@ export default () => {
                         style={{ height: parseInt(Dimensions.get('window').height) * 0.35, resizeMode: "cover" }} >
                         {/* backarrow */}
                         <View style={styles.imageAndpaymentView}>
+                            <TouchableOpacity onPress={() => {
+                            navigation.navigate("Profile")
+                        }}>
                             <View style={styles.imageView}>
                                 <Image source={require("../../assets/images/arrowBack2.png")} style={styles.backImage} />
                             </View>
+                            </TouchableOpacity>
                             <View style={styles.paymentView}>
                                 <Text style={styles.paymentText}>Payment</Text>
                             </View>
@@ -138,17 +142,25 @@ export default () => {
                         <Text style={styles.paymentHeadingBelowBackg}>Payment Methods</Text>
                     </View>
                     {/* card image dot image and arrowImage */}
+                    <TouchableOpacity onPress={() => {
+                            navigation.navigate("PaymentMethodDetail")
+                        }}>
                     <View style={styles.mainViewofImageTExt}>
+                        
                         <View style={styles.imageDotCardText}>
                             <Image source={require("../../assets/images/redCard.png")} style={styles.backImage} />
                             <Image source={require("../../assets/images/dots.png")} style={styles.dotIamge} />
                             <Text>6490</Text>
                         </View>
+                        
                         <View style={styles.arrowImg}>
                             <Image source={require("../../assets/images/rightArrow.png")} />
                         </View>
-                    </View>
+                    </View></TouchableOpacity>
                     {/* 2nd card */}
+                    <TouchableOpacity onPress={() => {
+                            navigation.navigate("PaymentMethodDetail")
+                        }}>
                     <View style={styles.mainViewofImageTExt}>
                         <View style={styles.imageDotCardText}>
                             <Image source={require("../../assets/images/redCard.png")} style={styles.backImage} />
@@ -158,7 +170,7 @@ export default () => {
                         <View style={styles.arrowImg}>
                             <Image source={require("../../assets/images/rightArrow.png")} />
                         </View>
-                    </View>
+                    </View></TouchableOpacity>
                     {/* voucheer image and heading */}
                     <View >
                         <View>
@@ -180,15 +192,15 @@ export default () => {
                     </View>
                     <View style={styles.buttonView}>
                         <TouchableOpacity style={[commonButtonFooter]} onPress={() => {
-                            navigation.navigate("HotelMenu")
+                            navigation.navigate("SelectPaymentMethod")
                         }}>
-                            <Text style={[buttonText]}>View Menu</Text>
+                            <Text style={[buttonText]}>Add Payment Method</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
             </ScrollView>
             <View style={styles.footerView}>
-                <Footer />
+                <Footer navigation={navigation}/>
             </View>
 
         </View>

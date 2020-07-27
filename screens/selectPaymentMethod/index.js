@@ -6,7 +6,7 @@ export default (props) => {
     let {navigation} = props;
     return (
         <View style={{height:"100%"}}>
-            <Profile />
+            <Profile navigation={navigation}/>
         </View> 
     );
 }
