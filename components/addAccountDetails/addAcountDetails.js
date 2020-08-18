@@ -148,6 +148,9 @@ export default (props) => {
                         </View>
                     </LinearGradient>
                     {/* img and Text */}
+
+                </View>
+                <View>
                     <View style={styles.mainViewImgText}>
                         {/* heart */}
                         <TouchableOpacity style={styles.profileImgTExt}>
@@ -166,8 +169,9 @@ export default (props) => {
                         </TouchableOpacity>
                         {/* payment */}
                         <TouchableOpacity style={styles.profileSecondBorderImgTExt} onPress={() => {
-                                        navigation.navigate("AccountDetails")
-                                    }}>
+                            // navigation.navigate("AccountDetails")
+                            navigation.navigate("PaymentOptions")
+                        }}>
                             <Image source={require("../../assets/images/money.png")} style={styles.imgOfContacts} />
                             <Text style={styles.textofImage}>Payment</Text>
                         </TouchableOpacity>
@@ -190,7 +194,7 @@ export default (props) => {
                 </View>
             </ScrollView>
             <View style={styles.footerView}>
-                <Footer navigation={navigation} />
+                <Footer navigation={navigation} currentScreen = {"profile"}/>
             </View>
         </View>
     );

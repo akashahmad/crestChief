@@ -30,11 +30,11 @@ export default (props) => {
                         </View>
                     </View>
                     <View style={{ height: "100%", marginBottom: "18%" }}>
-                        <Dishes navigation={navigation}/>
-                        <Dishes navigation={navigation}/>
-                        <Dishes navigation={navigation}/>
-                        <Dishes navigation={navigation}/>
-                        <Dishes navigation={navigation}/>
+                        <Dishes navigation={navigation} />
+                        <Dishes navigation={navigation} />
+                        <Dishes navigation={navigation} />
+                        <Dishes navigation={navigation} />
+                        <Dishes navigation={navigation} />
                         <View style={styles.buttonView}>
                             <TouchableOpacity style={[commonButtonFooter]} onPress={() => {
                                 navigation.navigate("HotelMenu")
@@ -113,19 +113,22 @@ export default (props) => {
             paddingRight: 10,
             bottom: "12%",
             zIndex: 1,
-            position: "relative",
+            // position: "relative",
         },
         menuBox: {
+            paddingLeft: 3,
             backgroundColor: "#fff",
             width: "100%",
             flexDirection: "row",
-            justifyContent: "space-around",
+            // justifyContent: "space-around",
             borderRadius: 10,
             elevation: 2,
             shadowColor: '#000',
         },
         mainViewOfLink: {
             padding: 20,
+            // backgroundColor:"green",
+            width:"33%"
         },
         commonCssText: {
             color: "#4F4F4F",
@@ -167,7 +170,7 @@ export default (props) => {
             <ScrollView >
                 <View style={styles.backgroundImgMainView}>
                     <ImageBackground source={Resturent}
-                        style={{ height: parseInt(Dimensions.get('window').height) * 0.40, resizeMode: "cover"}} >
+                        style={{ height: parseInt(Dimensions.get('window').height) * 0.40, resizeMode: "cover" }} >
                         <View style={styles.headerAboveBackground}>
                             <View style={styles.headingAndReviewsMainDiv}>
                                 <View>
@@ -189,22 +192,20 @@ export default (props) => {
                         <View style={styles.menuBoxMainView}>
                             <View style={styles.menuBox}>
                                 {/* info */}
-                                <TouchableOpacity onPress={() => { setpageSwtich("info") }}>
-                                    <View style={styles.mainViewOfLink}>
+                                <TouchableOpacity onPress={() => { setpageSwtich("info") }}
+                                    style={styles.mainViewOfLink}
+                                >
                                         <Text style={pageSwitch === "info" ? styles.activeTextMenu : styles.commonCssText}>Info</Text>
-                                    </View>
                                 </TouchableOpacity>
                                 {/* Menu */}
-                                <TouchableOpacity onPress={() => { setpageSwtich("") }}>
-                                    <View style={styles.mainViewOfLink}>
+                                <TouchableOpacity onPress={() => { setpageSwtich("") }}
+                                    style={styles.mainViewOfLink}
+                                >
                                         <Text style={pageSwitch === "" ? styles.activeTextMenu : styles.commonCssText}>Menu</Text>
-                                    </View>
                                 </TouchableOpacity>
                                 {/* Reviews */}
-                                <TouchableOpacity onPress={() => { setpageSwtich("review") }}>
-                                    <View style={styles.mainViewOfLink}>
+                                <TouchableOpacity onPress={() => { setpageSwtich("review") }} style={styles.mainViewOfLink}>
                                         <Text style={pageSwitch === "review" ? styles.activeTextMenu : styles.commonCssText}>Reviews</Text>
-                                    </View>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -217,7 +218,7 @@ export default (props) => {
             </ScrollView >
             {/* footer */}
             <View style={styles.footerMainView} >
-                <Footer navigation={navigation} currentScreen={"home"}/>
+                <Footer navigation={navigation} currentScreen={"home"} />
             </View>
         </View>
     );

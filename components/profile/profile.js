@@ -91,7 +91,8 @@ export default (props) => {
         },
         mainViewImgText: {
             marginTop: "30%",
-            marginBottom: "20%"
+            marginBottom: "20%",
+            position: "relative"
         },
         profileImgTExt: {
             flexDirection: "row",
@@ -169,9 +170,18 @@ export default (props) => {
                         </View>
                     </LinearGradient>
                     {/* img and Text */}
+                    {/* <View onPress={() => {
+                        navigation.navigate("PaymentOptions")
+                    }} style={{marginTop:40 , zIndex:1111}}>
+                        <Text>Next Page</Text>
+                    </View> */}
+                </View>
+                <View>
                     <View style={styles.mainViewImgText} >
                         {/* heart */}
-                        <TouchableOpacity style={styles.profileImgTExt}>
+                        <TouchableOpacity style={styles.profileImgTExt} onPress={() => {
+                            navigation.navigate("PaymentOptions")
+                        }}>
                             <Image source={require("../../assets/images/redHeart.png")} style={styles.imgOfheartContacts} />
                             <Text style={styles.textofImage}>Favourites</Text>
                         </TouchableOpacity>
@@ -211,7 +221,7 @@ export default (props) => {
                 </View>
             </ScrollView>
             <View style={styles.footerView}>
-                <Footer navigation={navigation} />
+                <Footer navigation={navigation} currentScreen={"profile"} />
             </View>
         </View>
     );

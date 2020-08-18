@@ -77,7 +77,6 @@ export default (props) => {
           </View>
         </View>
       </View>
-
     </View >
   );
 }

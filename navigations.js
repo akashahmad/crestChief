@@ -18,6 +18,16 @@ export default () => {
   return <NavigationContainer>
 
     <Stack.Navigator>
+
+    <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          header: () => <></>,
+          title: " "
+        }}
+      />
+
       <Stack.Screen
         name="QRScanner"
         component={QRScanner}
@@ -26,14 +36,7 @@ export default () => {
           title: " "
         }}
       />
-      <Stack.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          header: () => <></>,
-          title: " "
-        }}
-      />
+
       <Stack.Screen
         name="PaymentOptions"
         component={PaymentMethodOptions}
@@ -51,8 +54,6 @@ export default () => {
         }}
       />
 
-
-
       <Stack.Screen
         name="AccountDetails"
         component={AddAcountDetails}
@@ -62,7 +63,6 @@ export default () => {
         }}
       />
 
-
       <Stack.Screen
         name="HotelMenu"
         component={HotelMenu}
@@ -71,6 +71,7 @@ export default () => {
           title: " "
         }}
       />
+
       <Stack.Screen
         name="SelectPaymentMethod"
         component={SelectProfile}
@@ -79,6 +80,7 @@ export default () => {
           title: " "
         }}
       />
+      
       <Stack.Screen
         name="PaymentMethodDetail"
         component={PaymentMethodDetail}
